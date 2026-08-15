@@ -13,6 +13,7 @@ public class Main {
         System.out.println("Please enter your choice: ");
         System.out.println("A. Basic Calculator");
         System.out.println("B. Circumference Calculator");
+        System.out.println("C. Newton's Second Law Calculator");
         choice0  = Character.toUpperCase(scanner.next().charAt(0));
 
 
@@ -81,7 +82,6 @@ public class Main {
                 double C2rdiameter;
                 double C2rarea;
 
-
                 double C2circumferenceans;
                 double C2radiusans;
                 double C2diameterans;
@@ -97,7 +97,7 @@ public class Main {
                         System.out.printf("The Circumference of the circle is: %.2f", C2circumferenceans);
                     }
                     case 'B' -> {
-                        System.out.println("******************");
+                        System.out.println("************************");
                         System.out.print("Enter the Circumference: ");
                         C2circumference = scanner.nextDouble();
 
@@ -122,14 +122,74 @@ public class Main {
                         System.out.printf("The area of the circle is: %.2f",C2areaans);
                     }
                 }
+            }
+            case 'C' -> {
 
+                char choice02;
 
+                System.out.println("******************************");
+                System.out.println("Newton's Second Law Calculator");
+                System.out.println("******************************");
+                System.out.println("Please enter your choice: ");
+                System.out.println("A. Calculate Force (N)");
+                System.out.println("B. Calculate Mass (Kg)");
+                System.out.println("C. Calculate Acceleration (m/s)");
+                choice02 = Character.toUpperCase(scanner.next().charAt(0));
 
+                double C3Force;
+                double C3Mass;
+                double C3Acceleration;
 
+                double C3Forceans;
+                double C3Massans;
+                double C3Accelerationans;
+
+                switch(choice02){
+                    case 'A' -> {
+                        System.out.println("***************");
+                        System.out.print("Enter the Mass: ");
+                        C3Mass = scanner.nextDouble();
+
+                        System.out.println("***********************");
+                        System.out.print("Enter the Acceleration: ");
+                        C3Acceleration = scanner.nextDouble();
+
+                        C3Forceans = C3Mass * C3Acceleration;
+                        System.out.println("********************");
+                        System.out.printf("The Force is %.2f %s%n", C3Forceans, "N");
+                    }
+                    case 'B' -> {
+                        System.out.println("****************");
+                        System.out.print("Enter the Force: ");
+                        C3Force  = scanner.nextDouble();
+
+                        System.out.println("***********************");
+                        System.out.print("Enter the Acceleration: ");
+                        C3Acceleration = scanner.nextDouble();
+
+                        C3Massans = C3Force / C3Acceleration;
+                        System.out.println("***************");
+                        System.out.printf("The Mass is %.2f %s%n", C3Massans, "Kg");
+                    }
+                    case 'C' -> {
+                        System.out.println("****************");
+                        System.out.println("Enter the Force: ");
+                        C3Force  = scanner.nextDouble();
+
+                        System.out.println("***************");
+                        System.out.println("Enter the Mass: ");
+                        C3Mass  = scanner.nextDouble();
+
+                        C3Accelerationans = C3Force / C3Mass;
+                        System.out.printf("The Acceleration is %.2f %s%n",C3Accelerationans, "m/s");
+                    }
+                }
 
 
             }
         }
+
+        scanner.close();
 
 
 
